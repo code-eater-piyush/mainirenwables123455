@@ -1,0 +1,70 @@
+@import 'slick-carousel/slick/slick.css';
+@import 'slick-carousel/slick/slick-theme.css';
+@import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+}
+.main-content-wrapper, .no-select-text {
+  user-select: none;
+}
+.main-content-wrapper, .no-edit {
+  user-select: none;
+}
+
+body{
+  font-family: 'Karla';
+}
+
+html {
+  scroll-behavior: smooth;
+}
+.main-content-wrapper {
+  position: relative;
+  z-index: 1;
+}
+
+/* Preloader */
+.preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(45deg, #ccebf8, #fff); /* Dark overlay */
+  z-index: 9999; /* Ensure preloader is on top */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 1;
+  transition: opacity 0.5s ease-in-out;
+}
+
+/* When preloader fades out */
+.preloader.fade-out {
+  opacity: 0;
+  pointer-events: none; /* Disable interaction once faded */
+}
+
+/* Add your preloader animation or content */
+.preloader .loader {
+  /* Your loader style */
+  width: 50px;
+  height: 50px;
+  border: 5px solid #fff;
+  border-top: 5px solid transparent;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+/* Keyframes for spinning loader */
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Page content should be fully visible once preloader fades out */
+.main-content-wrapper {
+  transition: opacity 0.5s ease-in-out;
+  opacity: 1;
+}

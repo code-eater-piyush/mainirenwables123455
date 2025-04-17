@@ -1,0 +1,57 @@
+/* Sidebar Container */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: -100%; /* Hide sidebar by default */
+  width: 250px;
+  height: 100vh;
+  background-color: #1A211E; /* Dark gray background */
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  transition: left 0.3s ease; /* Smooth slide-in animation */
+  z-index: 1001; /* Ensure it appears above other content */
+}
+
+/* Sidebar Open State */
+.sidebar.open {
+  left: 0; /* Show sidebar */
+}
+
+/* Close Button */
+.close-btn {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  padding: 10px;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  color: #D8FB5A; /* Bright yellow-green for close button */
+  transition: color 0.3s ease;
+}
+
+.close-btn:hover {
+  color: #c0e04a; /* Slightly darker yellow-green on hover */
+}
+
+/* Sidebar Menu */
+.sidebar ul {
+  list-style: none;
+  padding: 20px;
+  margin-top: 50px; /* Space for close button */
+}
+
+.sidebar ul li {
+  margin: 15px 0;
+}
+
+.sidebar ul li a {
+  text-decoration: none;
+  color: #ffffff; /* White text */
+  font-size: 1.2rem;
+  transition: color 0.3s ease;
+}
+
+.sidebar ul li a:hover {
+  color: #D8FB5A; /* Bright yellow-green on hover */
+}

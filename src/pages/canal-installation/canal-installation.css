@@ -1,0 +1,56 @@
+/* Canal Installation Styles */
+.canal-section {
+    padding: 4rem 1rem;
+    background: #f5f9f0;
+  }
+  
+  .canal-container {
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+  
+  .canal-title {
+    font-size: 2.2rem;
+    color: #245243;
+    text-align: center;
+    margin-bottom: 2rem;
+    font-weight: 600;
+  }
+  
+  .canal-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
+  
+  .canal-image {
+    width: 100%;
+    max-width: 700px;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  }
+  
+  .canal-text {
+    max-width: 700px;
+  }
+  
+  .canal-text p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #333;
+    text-align: center;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .canal-title {
+      font-size: 1.8rem;
+    }
+    
+    .canal-text p {
+      font-size: 1rem;
+      padding: 0 1rem;
+    }
+  }

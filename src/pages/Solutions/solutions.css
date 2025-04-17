@@ -1,0 +1,175 @@
+/* Main section container */
+.solutions-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    padding: 40px 20px;
+    background-color: #ffffff; /* White background */
+  }
+  
+  .section-title {
+    font-size: 2.5rem;
+    color: #1A211E; /* Dark gray for headings */
+    margin: 0;
+    text-align: center;
+    position: relative; /* Required for the pseudo-element */
+    display: inline-block; /* Ensures the underline only spans the text */
+  }
+  
+  .section-title-design {
+    position: relative;
+    z-index: 1;
+  }
+  
+  .section-title-design::after {
+    content: '';
+    position: absolute;
+    bottom: -10px; /* Adjust this value to control the distance from the text */
+    left: 50%;
+    transform: translateX(-50%); /* Center the underline */
+    width: 60%; /* Width of the underline */
+    height: 4px; /* Thickness of the underline */
+    background-color: #D8FB5A; /* Bright yellow-green underline */
+    border-radius: 2px; /* Rounded corners for the underline */
+  }
+  
+  .section-description {
+    font-size: 1.1rem;
+    color: #245243; /* Dark green for text */
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto 20px;
+    font-weight: 900;
+  }
+  
+  /* Each solution card */
+  .solution-card {
+    display: flex;
+    align-items: stretch; /* Ensure children stretch to the same height */
+    width: 90%;
+    max-width: 1200px;
+    background-color: #1A211E; /* Black background for cards */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    min-height: 300px; /* Set a minimum height for consistency */
+  }
+  
+  .solution-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Reverse layout for rooftop card on desktop */
+  .solution-card.reverse {
+    flex-direction: row-reverse;
+  }
+  
+  /* Image styling */
+  .solution-image {
+    width: 50%; /* Fixed width for desktop */
+    height: 300px; /* Fixed height for all images */
+    object-fit: cover; /* Ensures the image covers the area without distortion */
+  }
+  
+  /* Text information */
+  .solution-info {
+    padding: 30px;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center content vertically */
+  }
+  
+  .solution-info h2 {
+    font-size: 1.8rem;
+    color: #ffffff; /* White text for headings */
+    margin: 0 0 10px;
+  }
+  
+  .solution-info p {
+    font-size: 1rem;
+    color: #D8FB5A; /* Bright yellow-green for text */
+    margin: 0 0 20px;
+    line-height: 1.6;
+  }
+  
+  .learn-more {
+    font-size: 1rem;
+    color: #3C8A71; /* Green for links */
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+  }
+  
+  .learn-more:hover {
+    color: #D8FB5A; /* Bright yellow-green on hover */
+  }
+  
+  /* "More" button styling */
+  .more-solutions {
+    margin-top: 20px;
+  }
+  
+  .more-solutions button {
+    padding: 12px 30px;
+    font-size: 1rem;
+    color: #1A211E; /* Dark gray text */
+    background-color: #D8FB5A; /* Bright yellow-green for buttons */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .more-solutions button:hover {
+    background-color: #c0e04a; /* Slightly darker yellow-green on hover */
+    transform: translateY(-2px);
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .solution-card {
+      flex-direction: column;
+      width: 100%;
+      min-height: auto; /* Allow height to adjust on mobile */
+    }
+  
+    /* Reset reverse layout for rooftop card on mobile */
+    .solution-card.reverse {
+      flex-direction: column;
+    }
+  
+    .solution-image {
+      width: 100%; /* Full width on mobile */
+      height: 200px; /* Fixed height for mobile images */
+    }
+  
+    .solution-info {
+      width: 100%;
+      padding: 20px;
+    }
+  
+    .section-title {
+      font-size: 2rem;
+    }
+  
+    .section-description {
+      font-size: 1rem;
+    }
+  
+    .solution-info h2 {
+      font-size: 1.5rem;
+    }
+  
+    .solution-info p {
+      font-size: 0.9rem;
+    }
+  
+    .more-solutions button {
+      width: 100%;
+      padding: 15px;
+    }
+  }

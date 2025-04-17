@@ -1,0 +1,551 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  position: relative;
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(180deg, #245243, #ffffff); /* Dark green to white gradient */
+  padding: 20px;
+}
+
+.partners-page {
+  max-width: 1300px;
+  margin: auto;
+}
+
+.blurred-background {
+  filter: blur(4px);
+  transition: filter 0.3s ease-in-out;
+}
+
+.partners-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 40px 0 60px 0;
+}
+
+.left-section h2 {
+  font-size: 36px;
+  color: #1A211E; /* Dark gray for headings */
+  margin: 0;
+}
+
+.left-section h3 {
+  font-size: 18px;
+  color: #ffffff; /* Medium green for subheadings */
+  margin-top: 10px;
+}
+
+.right-section p {
+  font-size: 16px;
+  color: #1A211E; /* Dark gray for text */
+  max-width: 600px;
+  line-height: 1.6;
+}
+
+/* Modal Backdrop */
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(36, 82, 67, 0.8); /* Dark green with opacity */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* Modal Container */
+.modal {
+  background-color: #ffffff; /* White background */
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  max-width: 400px; /* Reduced width */
+  width: 90%;
+  color: #1A211E; /* Dark gray text */
+}
+
+.modal h2 {
+  font-size: 1.5rem; /* Smaller font */
+  color: #3C8A71; /* Medium green for headings */
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+/* Form Styles */
+.modal form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem; /* Reduced gap */
+}
+
+.modal label {
+  font-size: 0.9rem; /* Smaller font */
+  color: #1A211E; /* Dark gray text */
+  font-weight: 500;
+}
+
+.modal input,
+.modal textarea {
+  width: 100%;
+  padding: 8px; /* Reduced padding */
+  border-radius: 6px;
+  border: 1px solid #3C8A71; /* Medium green border */
+  background-color: #ffffff; /* White background */
+  color: #1A211E; /* Dark gray text */
+  font-size: 0.9rem; /* Smaller font */
+  transition: border-color 0.3s ease;
+}
+
+.modal input::placeholder,
+.modal textarea::placeholder {
+  color: #999999; /* Light gray placeholder text */
+}
+
+.modal input:focus,
+.modal textarea:focus {
+  border-color: #3C8A71; /* Medium green on focus */
+  outline: none;
+}
+
+.modal textarea {
+  resize: vertical;
+  min-height: 80px; /* Reduced height */
+}
+
+/* Button Styles */
+.modal button {
+  padding: 8px 16px; /* Reduced padding */
+  border-radius: 6px;
+  border: none;
+  font-size: 0.9rem; /* Smaller font */
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.modal button[type="submit"] {
+  background-color: #3C8A71; /* Medium green for submit button */
+  color: #ffffff; /* White text */
+}
+
+.modal button[type="submit"]:hover {
+  background-color: #245243; /* Dark green on hover */
+}
+
+.modal button[type="button"] {
+  background-color: #D8FB5A; /* Bright yellow-green for close button */
+  color: #1A211E; /* Dark gray text */
+  margin-top: 0.5rem;
+}
+
+.modal button[type="button"]:hover {
+  background-color: #c0e04a; /* Slightly darker yellow-green on hover */
+}
+
+label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #1A211E; /* Dark gray for labels */
+  font-size: 0.9rem;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+  border: 1px solid #3C8A71; /* Medium green border */
+  border-radius: 8px;
+  transition: border-color 0.2s;
+  font-size: 1rem;
+  background-color: #f9f9f9; /* Light gray background */
+}
+
+input:focus,
+textarea:focus {
+  border-color: #3C8A71; /* Medium green on focus */
+  outline: none;
+}
+
+/* Buttons */
+button {
+  padding: 0.75rem 1.25rem;
+  margin-top: 0.5rem;
+  margin-right: 0.5rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  font-size: 0.9rem;
+}
+
+/* Primary Submit Button */
+button[type="submit"] {
+  background-color: #3C8A71; /* Medium green for buttons */
+  color: white;
+}
+
+button[type="submit"]:hover {
+  background-color: #245243; /* Dark green on hover */
+}
+
+/* Secondary Close Button */
+button[type="button"] {
+  background-color: #D8FB5A; /* Bright yellow-green for buttons */
+  color: #1A211E; /* Dark gray text */
+}
+
+button[type="button"]:hover {
+  background-color: #c0e04a; /* Slightly darker yellow-green on hover */
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+  .modal {
+    padding: 1rem;
+  }
+
+  input,
+  textarea,
+  button {
+    font-size: 0.85rem;
+  }
+
+  button {
+    padding: 0.6rem 1rem;
+  }
+}
+
+.partners-bottom-section {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.partners-grid {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.partner-card {
+  background-color: #ffffff; /* White background */
+  border: 1px solid #3C8A71; /* Medium green border */
+  border-radius: 8px;
+  padding: 15px 30px;
+  height: 80px;
+  cursor: pointer;
+  text-align: center;
+  line-height: 40px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  flex: 1 1 30%; /* Allow cards to grow and shrink */
+  max-width: 30%; /* Ensure cards don't exceed 30% width */
+  white-space: nowrap; /* Prevent text from wrapping */
+  overflow: hidden; /* Prevent text from slipping out */
+  text-overflow: ellipsis; /* Add ellipsis if text overflows */
+}
+
+.partner-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.partners-network {
+  text-align: center;
+  margin: 0 150px 100px;
+}
+
+.partners-network h4 {
+  font-size: 20px;
+  color: #1A211E; /* Dark gray for headings */
+  margin-bottom: 10px;
+}
+
+.become-partner-btn {
+  background-color: #3C8A71; /* Medium green for buttons */
+  color: #ffffff; /* White text */
+  padding: 10px 20px;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.become-partner-btn:hover {
+  background-color: #245243; /* Dark green on hover */
+}
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+.backdrop.show {
+  display: flex;
+  flex-direction: row;
+}
+
+.popup-options {
+  background-color: #ffffff; /* White background */
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+  max-width: 90%;
+  max-height: 80%;
+  overflow-y: auto;
+}
+
+.partners-list {
+  display: grid;
+  grid-auto-flow: column;
+  gap: 15px;
+  white-space: nowrap;
+  overflow-x: auto; /* Allow horizontal scrolling for smaller screens */
+}
+
+.partner-image {
+  width: 150px;
+  height: 150px;
+  object-fit: contain;
+  border-radius: 8px;
+  transition: transform 0.2s ease;
+}
+
+.partner-image:hover {
+  transform: scale(1.1);
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 1024px) {
+  .partners-header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .right-section p {
+    margin-top: 20px;
+  }
+
+  .partners-grid {
+    flex-wrap: wrap; /* Allow cards to wrap on smaller screens */
+  }
+
+  .partner-card {
+    flex: 1 1 45%; /* Two cards per row on medium screens */
+    max-width: 45%;
+  }
+
+  .partners-network {
+    margin: 0 50px 100px;
+  }
+}
+
+@media (max-width: 768px) {
+  .partners-bottom-section {
+    flex-direction: column; /* Stack sections vertically on smaller screens */
+  }
+
+  .partners-grid {
+    flex: 1 1 100%; /* Ensure the grid takes full width */
+    margin-bottom: 40px; /* Add space between grid and network section */
+  }
+
+  .partner-card {
+    flex: 1 1 100%; /* One card per row on smaller screens */
+    max-width: 100%;
+  }
+
+  .partners-network {
+    margin: 0 20px 50px; /* Adjust margin for smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .left-section h2 {
+    font-size: 28px;
+  }
+
+  .left-section h3 {
+    font-size: 16px;
+  }
+
+  .right-section p {
+    font-size: 14px;
+  }
+
+  .partner-card {
+    padding: 10px 20px;
+    height: 60px;
+    line-height: 30px;
+  }
+
+  .become-partner-btn {
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+}
+
+/* Popup Styles - Optimized */
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  backdrop-filter: blur(3px);
+}
+
+.backdrop.show {
+  display: flex;
+}
+
+.popup-options {
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  width: 90%;
+  max-width: 1000px;
+  padding: 30px;
+  border: 3px solid #3C8A71;
+  position: relative;
+  animation: fadeIn 0.3s ease-out;
+}
+
+.popup-title {
+  font-size: 1.5rem;
+  color: #245243;
+  text-align: center;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.partners-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 20px;
+  place-items: center;
+  width: 100%;
+}
+
+.partner-image {
+  width: 100%;
+  height: 100px;
+  min-height: 100px;
+  object-fit: contain;
+  padding: 15px;
+  background: white;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.partner-image:hover {
+  transform: scale(1.05);
+  border-color: #3C8A71;
+  box-shadow: 0 6px 12px rgba(60, 138, 113, 0.2);
+}
+
+.popup-close {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: #3C8A71;
+  color: white;
+  border: none;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 1.2rem;
+  font-weight: bold;
+  transition: all 0.2s ease;
+}
+
+.popup-close:hover {
+  background: #245243;
+  transform: rotate(90deg);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .popup-options {
+    padding: 20px;
+  }
+  
+  .partner-image {
+    height: 80px;
+    min-height: 80px;
+    padding: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .popup-options {
+    width: 95%;
+    padding: 15px;
+  }
+  
+  .partners-list {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+  
+  .partner-image {
+    height: 70px;
+    min-height: 70px;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
